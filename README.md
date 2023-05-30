@@ -1,4 +1,4 @@
-## Proyecto 1
+## Laboratorio 9 - Calculadora/ESLINT
 
 Sistemas y Tecnologias Web
 
