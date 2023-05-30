@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './App.scss'
+import './App.scss';
 
 function App() {
   const [displayValue, setDisplayValue] = useState('');
@@ -15,7 +15,7 @@ function App() {
     if (operator === '+/-') {
       setDisplayValue(-parseFloat(displayValue));
     } else {
-      setResult(displayValue + ' ' + operator);
+      setResult(`${displayValue} ${operator}`);
       setDisplayValue('');
     }
   };
@@ -30,7 +30,7 @@ function App() {
       calculatedResult = parseFloat(result) * parseFloat(displayValue);
     }
 
-    if (calculatedResult > 999999999 ||calculatedResult < -999999999) {
+    if (calculatedResult > 999999999 || calculatedResult < -999999999) {
       setDisplayValue('ERROR***');
     } else {
       setDisplayValue(calculatedResult.toString());
@@ -41,16 +41,15 @@ function App() {
   const handleClearClick = () => {
     setDisplayValue('');
     setResult('');
-
   };
 
   return (
     <div className="Pantalla">
       <div className="titulo">
-      <h1>Calculadora Básica</h1>
+        <h1>Calculadora Básica</h1>
       </div>
       <div className={`calculator ${displayValue === 'ERROR***' ? 'error' : ''}`}>
-      <div className="display">{displayValue}</div>
+        <div className="display">{displayValue}</div>
         <div className="buttons">
           <div className="row">
             <button onClick={() => handleNumberClick('7')}>7</button>
@@ -83,7 +82,6 @@ function App() {
       </div>
     </div>
   );
-};
+}
 
-
-export default App
+export default App;
